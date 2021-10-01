@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
 body{
   background-color: black;
   color: rgb(252, 247, 233);
-  font-family: 'Hahmlet', serif;
+  font-family: 'Gothic A1', sans-serif;
   font-size: 2vw;
 }
       div.row {
