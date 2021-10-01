@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 body{
   background-color: black;
-  color: rgb(102, 255, 217);
+  color: rgb(252, 247, 233)
   font-family: 'Noto Serif KR', serif;
   font-size: 2vw;
 }
@@ -38,24 +38,24 @@ div.note{
 }
 a:link{
   text-decoration-line: none;
-  color: rgb(255, 121, 77);
+  color: rgb(198, 57, 57);
 }
 a:visited{
   text-decoration-line: none;
-  color: rgb(255, 121, 77);
+  color: rgb(198, 57, 57);
 }
 a:hover{
   text-decoration-line: none;
-  color: rgb(255, 121, 77);
+  color: rgb(198, 57, 57);
 }
 a:active{
   text-decoration-line: none;
-  color: rgb(255, 121, 77);
+  color: rgb(198, 57, 57);
 }
 
 mark{
   color: rgb(23, 51, 165);
-  background: rgb(248, 220, 9);
+  background: rgb(198, 57, 57);
 }
 #red{
   color: white;
@@ -70,18 +70,18 @@ hr{
   border: 1px solid #ff794d !important;
 }
 em{
-  color: #ff5050;
+  color: rgb(198, 57, 57);
   text-decoration: underline;
 }
 strong{
-  color: #ff5050;
+  color: rgb(198, 57, 57);
   text-decoration: underline;
 }
 u{
-  color: #ff5050;
+  color: rgb(198, 57, 57);
   text-decoration: underline;
 }
 b{
-  color: #ff5050;
+  color: rgb(198, 57, 57);
   text-decoration: underline;
 }
