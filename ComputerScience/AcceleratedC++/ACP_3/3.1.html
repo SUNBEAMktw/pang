@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <title>pang</title>
+    <link rel="shotcut icon" href="../../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet"
+      href="//unpkg.com/@highlightjs/cdn-assets@11.2.0/styles/github-dark.min.css">
+<script src="//unpkg.com/@highlightjs/cdn-assets@11.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+                                           
+  <body>
+<center>
+      <a href="index.html">pang</a>
+      <hr width="50%" color="#1733a5" noshade>
+      
+      <a href="Philosophy/Phi.html">철학</a>
+      &nbsp;
+      <a href="Mathematics/Mat.html">수학</a> 
+      &nbsp;
+      <a href="Physics/Phy.html">물리학</a>
+      &nbsp;
+      컴퓨터과학 
+           
+      <hr width="70%" color="#1733a5" noshade>
+</center>
+                                        
+<div class="row">
+    <div class="left">
+    <ul>
+      <li>『Accelerated C++』<br>(Koening, Moo)</li>
+    </ul>
+    </div>
+    <div class="center">     
+      <ol>
+        <li><a href="../ACP_1/1.html">스트링 사용</a></li>
+        <li><a href="../ACP_2/2.html">루프와 셈</a></li>
+        <li>자료 뭉치 작업</li>
+        <li><a href="../ACP_4/4.html">프로그램 및 자료 구성</a></li>
+        <li><a href="../ACP_5/5.html">순차 컨테이너 및 스트링 분석</a></li>
+        <li><a href="../ACP_6/6.html">라이브러리 알고리즘 사용</a></li>
+        <li><a href="../ACP_7/7.html">연관 컨테이너 사용</a></li>
+        <li><a href="../ACP_8/8.html">제네릭 함수 작성</a></li>
+        <li><a href="../ACP_9/9.html">새 타입 정의</a></li>
+        <li><a href="../ACP_10/10.html">메모리 관리 및 저수준 자료구조</a></li>
+        <li><a href="../ACP_11/11.html">추상자료형 정의</a></li>
+        <li><a href="../ACP_12/12.html">값처럼 동작하는 클래스 객체</a></li>
+        <li><a href="../ACP_13/13.html">상속 및 동적 바인딩</a></li>
+        <li><a href="../ACP_15/15.html">문자 그림 다시 살펴보기</a></li>
+        <li><a href="../ACP_16/16.html">이제 어디로?</a></li>
+      </ol>
+    </div>
+    <div class="right">
+      <ol>
+        <li>최종 점수 계산</li>
+        <li><a href="3.2.html">평균값 대신 중앙값</a></li>
+        <li><a href="3.3.html">핵심 정리</a></li>
+      </ol>
+      <h5>연습문제</h5>
+      <ol>
+        <li><a href="3-1.html">Ex</a></li>
+        <li><a href="3-2.html">Ex</a></li>
+        <li><a href="3-3.html">Ex</a></li>
+        <li><a href="3-4.html">Ex</a></li>
+        <li><a href="3-5.html">Ex</a></li>
+        <li><a href="3-6.html">Ex</a></li>
+      </ol>
+    </div>
+    </div>
+    <hr width="100%" color="#1733a5" noshade>
+    <p>
+      최종 성적의 40%가 기말 성적에, 20%가 중간 성적에, 나머지는 숙제 성적에 해당하는 강의가 있다. 
+      학생들의 성적 계산을 돕는 프로그램을 만들어보자. 
+      </p>
+<pre><code>#include <iomanip>
+#include <ios>
+#include <iostream>
+#include <string>
+
+using std::cin;			using std::setprecision;
+using std::cout;		using std::string;
+using std::endl;		using std::streamsize;
+
+int main()
+{
+	// 학생의 이름을 물을 것
+	cout << "이름을 알려주세요: ";
+	string name;
+	cin >> name;
+	cout << "안녕하세요, " << name << " 씨!" << endl;
+
+	// 중간 및 기말 성적을 물을 것
+	cout << "중간 및 기말 성적을 알려주세요: ";
+	double midterm, final;
+	cin >> midterm >> final;
+
+	// 과제 성적을 물을 것
+	cout << "과제 성적을 전부 알려주세요. "
+		"입력이 끝나면 end-of-file: ";
+
+	// 지금까지 읽은 성적의 개수와 합
+	int count = 0;
+	double sum = 0;
+
+	// 읽어 들일 변수
+	double x;
+
+	// 불변조건:
+	// 지금까지 읽은 성적 개수,
+	// sum은 성적을 합한 값
+	while (cin >> x) {
+		++count;
+		sum += x;
+	}
+
+	// 결과 표시
+	streamsize prec = cout.precision();
+	cout << "당신의 최종 성적은 " << setprecision(3)
+		<< 0.2 * midterm + 0.4 * final + 0.4 * sum / count
+		<< setprecision(prec) << endl;
+
+	return 0;
+}</code></pre>
+<p>
+평소처럼 #include 지시자, 그리고 라이브러리 기능을 위한 선언인 using으로 시작한다. 
+이런 기능으로는 &lt;iomanip&gt;과 &lt;ios&gt;가 있는데, 지금으로서는 처음 보는 것이다. 
+&lt;ios&gt; 헤더는 streamsize를 정의한다. 
+streamsize란 입출력 라이브러리가 크기를 표현하기 위해 사용하는 타입이다. 
+&lt;iomanip&gt; 헤더는 조작자 setprecision을 정의한다. 
+setprecision이란 출력물이 포함할 유효숫자를 프로그래머가 결정할 수 있게 만드는 조작자다. 
+</p>
+<p>
+프로그램은 학생의 이름, 중간 성적, 기말 성적을 묻고 읽는다. 
+그런 다음에는 과제 성적을 묻고, end-of-file 신호가 있을 때까지 계속 읽는다. 
+C++ 구현에 따라 사용자가 프로그램에 신호를 보내는 방식은 다를 것이다. 
+가장 흔한 방식은 ctrl을 누른 채로 z를 누르거나 (이는 마이크로소프트 윈도즈에서 쓰이는 방식이며, 유닉스나 리눅스 시스템에서는) d를 누른다.
+</p>
+<p>
+프로그램은 성적을 읽어 들이면서 count를 통해 얼마나 많은 성적이 입력되었는지 센다. 
+그런 다음 이들 성적의 합을 sum에 저장한다. 
+프로그램이 모든 성적을 읽었을 때, 프로그램은 인사말과 함께 학생의 최종 성적을 보고한다. 
+이 과정에서 count와 sum은 과제 성적 평균을 계산하기 위해 쓰인다. 
+</p>
+<p>
+이 프로그램에서 익숙하지 않은 점은 없을 것이다. 
+다만 몇 가지 새로운 용례가 있어, 설명하겠다.
+</p>
+<p>
+처음 눈에 띄는 것은 학생의 성적을 읽는 부분이다.
+</p>
+<pre><code>cout << "중간 및 기말 성적을 알려주세요: ";
+double midterm, final;
+cin >> midterm >> final;</code></pre>
+<p>
+이들 문장의 첫 라인은 익숙할 것이다. 메시지를 적는 라인이다. 
+이 경우에는 학생이 다음에 할 일을 가리키는 메시지다. 
+다음 문장은 midterm과 final을 double로 정의한다. 
+double이란 두 배로 정밀한 부동소수점을 위한 내장형 타입이다. 
+단일 정밀도 부동소수점 타입도 있는데, 웬만하면 그냥 double 쓰는 게 낫다. 
+</p>
+<p>
+이런 타입 이름은 메모리가 오늘날보다 훨씬 비쌌을 때 만들어진 것이다. 
+float는 6자리 유효숫자를 위해 만들어졌고, 이 정도로는 실상 할 수 있는 게 없다. 
+한편 double 타입은 적어도 10자리 유효숫자는 보장한다. 
+현대 컴퓨터에서는 double이 float보다 적합하고, 더 느리지도 않다. 
+때로는 double이 더 빠르기도 하다.
+</p>
+<p>
+이제 midterm과 final을 정의했으니, 값을 읽어 들일 차례다. 
+출력 연산자처럼, 입력 연산자 또한 제 왼편 피연산자를 결과로 반환한다. 
+따라서, 출력 연산을 연쇄적으로 처리한 것처럼 입력 연산을 연쇄적으로 처리하는 것이 가능하다.
+</p>
+<pre><code>cin >> midterm >> final;</code></pre>
+<p>
+는 아래와 같은 효과를 갖는다.
+</p>
+<pre><code>cin >> midterm;
+cin >> final;</code></pre>
+<p>
+양쪽 모두 표준 입력에서 midterm으로 수를 읽어 들인 다음, 다음 숫자를 final로 읽어 들인다.
+</p>
+<hr width="100%" color="#1733a5" noshade>
+  </body>
+</html>
