@@ -1,2 +1,2 @@
 # pang
-pangpang
+Trans[1] = Mathematics: A Discrete Introduction
