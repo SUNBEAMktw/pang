@@ -1,2 +1,2 @@
 # pang
-Trans[1] = Mathematics: A Discrete Introduction
+Trans[0] = Mathematics: A Discrete Introduction
