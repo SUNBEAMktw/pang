@@ -56,8 +56,7 @@ a:active{
 }
 
 mark{
-  color: rgb(23, 51, 165);
-  background: rgb(198, 57, 57);
+  color: rgb(0, 255, 180);
 }
 #red{
   color: white;
